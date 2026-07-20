@@ -80,59 +80,54 @@
             <div class="category-card">🛁 Ванные</div>
             <div class="category-card">🛋️ Гостиные</div>
             <div class="category-card">🛏️ Спальни</div>
-            <div class="category-card"> Прихожие</div>
+            <div class="category-card">🚪 Прихожие</div>
             <div class="category-card">👶 Детские</div>
         </div>
     </section>
 
     <section class="gallery">
-    <h2 class="gallery__title">Галерея работ</h2>
-
-    <div class="gallery__slider">   <!-- обёртка: кнопки + картинка -->
-        <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Предыдущая">‹</button>
-
-        <figure class="gallery__viewport">
-            <img class="gallery__image" src=""  alt= "" >
-            <figcaption class="gallery__caption"></figcaption>  <!-- опционально -->
-        </figure>
-
-        <button class="gallery__btn gallery__btn--next" type="button" aria-label="Следующая">›</button>
-    </div>
+        <h2 class="gallery__title">Галерея работ</h2>
+        <div class="gallery__slider">
+            <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Предыдущая">‹</button>
+            <figure class="gallery__viewport">
+                <img class="gallery__image" src="" alt="Превью галереи">
+                <figcaption class="gallery__caption"></figcaption>
+            </figure>
+            <button class="gallery__btn gallery__btn--next" type="button" aria-label="Следующая">›</button>
+        </div>
     </section>
 
     <section class="tabs">
-    <h2 class="tabs__title">Комплектация</h2>
-    
-    <div class="tabs__buttons">
-        <button class="tab-btn active" data-tab="standard">Стандарт</button>
-        <button class="tab-btn" data-tab="comfort">Комфорт</button>
-        <button class="tab-btn" data-tab="premium">Премиум</button>
-    </div>
-    
-    <div class="tabs__content">
-        <div class="tab-panel active" id="standard">
-            <h3>Стандарт</h3>
-            <ul>
-                <li>Ламинат 32 класс</li>
-                <li>Обои под покраску</li>
-                <li>Натяжной потолок</li>
-            </ul>
+        <h2 class="tabs__title">Комплектация</h2>
+        <div class="tabs__buttons">
+            <button class="tab-btn active" data-tab="standard">Стандарт</button>
+            <button class="tab-btn" data-tab="comfort">Комфорт</button>
+            <button class="tab-btn" data-tab="premium">Премиум</button>
         </div>
-        <div class="tab-panel" id="comfort">
-        <h3>Комфорт</h3>
-            <ul>
-                <li>Инженерная доска</li>
-                <li>Декоративная штукатурка</li>
-                <li>Потолок с подсветкой</li>
-            </ul>
-        </div>
-        <div class="tab-panel" id="premium">
-            <h3>Премиум</h3>
-            <ul>
-                <li>Массив дуба</li>
-                <li>Венецианская штукатурка</li>
-                <li>Дизайнерский потолок</li>
-            </ul>
+        <div class="tabs__content">
+            <div class="tab-panel active" id="standard">
+                <h3>Стандарт</h3>
+                <ul>
+                    <li>Ламинат 32 класс</li>
+                    <li>Обои под покраску</li>
+                    <li>Натяжной потолок</li>
+                </ul>
+            </div>
+            <div class="tab-panel" id="comfort">
+                <h3>Комфорт</h3>
+                <ul>
+                    <li>Инженерная доска</li>
+                    <li>Декоративная штукатурка</li>
+                    <li>Потолок с подсветкой</li>
+                </ul>
+            </div>
+            <div class="tab-panel" id="premium">
+                <h3>Премиум</h3>
+                <ul>
+                    <li>Массив дуба</li>
+                    <li>Венецианская штукатурка</li>
+                    <li>Дизайнерский потолок</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -142,21 +137,16 @@
         <div class="scheme__wrapper">
             <img class="scheme__image" src="https://placehold.co/800x400/e0e0e0/333?text=План+квартиры" alt="План квартиры">
             
-            <!-- Маркер 1: top и left задаем inline, чтобы легко двигать -->
             <div class="scheme__marker" style="top: 30%; left: 25%;">
-                <span>.</span>
+                <span>+</span>
                 <div class="scheme__tooltip">Черновые работы</div>
             </div>
-            
-            <!-- Маркер 2 -->
             <div class="scheme__marker" style="top: 60%; left: 70%;">
-                <span>.</span>
+                <span>+</span>
                 <div class="scheme__tooltip">Чистовая отделка</div>
             </div>
-            
-            <!-- Маркер 3 -->
             <div class="scheme__marker" style="top: 45%; left: 50%;">
-                <span>.</span>
+                <span>+</span>
                 <div class="scheme__tooltip">Электрика и сантехника</div>
             </div>
         </div>
@@ -164,34 +154,38 @@
 
     <section class="video-section">
         <h2 class="video-section__title">Видео о наших работах</h2>
-        <div class="video-grid">
-            <!-- Карточка 1 -->
-            <div class="video-card" data-video="https://www.pexels.com/download/video/4307350/">
-                <img src="https://placehold.co/960x540/333/FFF?text=Ремонт+кухни" alt="Превью">
-                <div class="video-card__play">▶</div>
+        <div class="video-slider">
+            <button class="video-slider__btn video-slider__btn--prev" type="button" aria-label="Предыдущее">‹</button>
+            
+            <div class="video-slider__viewport">
+                <div class="video-card" id="activeVideoCard" data-video="">
+                    <img class="video-slider__image" src="" alt="Превью видео">
+                    <div class="video-card__play">▶</div>
+                </div>
+                <div class="video-slider__caption"></div>
+                
+                <!-- СЧЕТЧИК ВИДЕО (ЦИФРЫ) -->
+                <div class="video-counter" id="videoCounter"></div>
             </div>
-            <!-- Карточка 2 -->
-            <div class="video-card" data-video="https://www.pexels.com/download/video/29455653/">
-                <img src="https://placehold.co/960x540/333/FFF?text=Ремонт+ванной" alt="Превью">
-                <div class="video-card__play">▶</div>
-            </div>
+
+            <button class="video-slider__btn video-slider__btn--next" type="button" aria-label="Следующее">›</button>
         </div>
     </section>
 
-<!-- Модальное окно (в самом низу body, перед </body>) -->
-<div class="modal" id="videoModal">
-    <div class="modal__overlay">
-        <div class="modal__content">
-            <button class="modal__close" aria-label="Закрыть">×</button>
-            <!-- Используем тег video вместо iframe -->
-            <video id="modalVideo" controls width="800" height="450"></video>
+    <!-- Модальное окно для видео -->
+    <div class="modal" id="videoModal">
+        <div class="modal__overlay">
+            <div class="modal__content">
+                <button class="modal__close" aria-label="Закрыть">×</button>
+                <video id="modalVideo" controls></video>
+            </div>
         </div>
     </div>
-</div>
 
     <script>
+        // === 1. ШАПКА ПРИ СКРОЛЛЕ ===
         window.addEventListener('scroll', () => {
-        const header = document.querySelector('.header');
+            const header = document.querySelector('.header');
             if (window.scrollY > 100) {
                 header.classList.add('header--scrolled');
             } else {
@@ -199,66 +193,51 @@
             }
         });
 
+        // === 2. ГАЛЕРЕЯ ===
         const galleryImages = [
             { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Кухни'), alt: '🍳 Кухни', title: 'Кухни' },
             { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Ванные'), alt: '🛁 Ванные', title: 'Ванные' },
             { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Гостиные'), alt: '🛋️ Гостиные', title: 'Гостиные' },
             { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Спальни'), alt: '🛏️ Спальни', title: 'Спальни' },
-            { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Прихожие'), alt: 'Прихожие', title: 'Прихожие' },
+            { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Прихожие'), alt: '🚪 Прихожие', title: 'Прихожие' },
             { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Детские'), alt: '👶 Детские', title: 'Детские' }
         ];
 
         let currentIndex = 0;
-
         function showSlide(index) {
             const img = document.querySelector('.gallery__image');
             img.src = galleryImages[index].src;
             img.alt = galleryImages[index].alt;
-            const caption = document.querySelector('.gallery__caption');
-            caption.textContent = galleryImages[index].title;
+            document.querySelector('.gallery__caption').textContent = galleryImages[index].title;
         }
-
         showSlide(currentIndex);
 
-        const galleryBtns = document.querySelectorAll('.gallery__btn');
-        galleryBtns[0].addEventListener('click', () => {
+        document.querySelectorAll('.gallery__btn')[0].addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
             showSlide(currentIndex);
         });
-        galleryBtns[1].addEventListener('click', () => {
+        document.querySelectorAll('.gallery__btn')[1].addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % galleryImages.length;
             showSlide(currentIndex);
         });
-        
-        // Свайп для мобильных
+
+        // Свайп для галереи
         const slider = document.querySelector('.gallery__slider');
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        slider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
+        let touchStartX = 0, touchEndX = 0;
+        slider.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
         slider.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-
-        function handleSwipe() {
-        const diff = touchStartX - touchEndX;
-        const threshold = 50; // минимальное расстояние свайпа в пикселях
-        
-        if (diff > threshold) {
-                // Свайп влево → следующий слайд
+            const diff = touchStartX - touchEndX;
+            if (diff > 50) {
                 currentIndex = (currentIndex + 1) % galleryImages.length;
                 showSlide(currentIndex);
-            } else if (diff < -threshold) {
-                // Свайп вправо → предыдущий слайд
+            } else if (diff < -50) {
                 currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
                 showSlide(currentIndex);
             }
-        }
+        }, { passive: true });
 
+        // === 3. ТАБЫ ===
         const tabButtons = document.querySelectorAll('.tab-btn');
         const tabPanels = document.querySelectorAll('.tab-panel');
         tabButtons.forEach(button => {
@@ -266,14 +245,69 @@
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 tabPanels.forEach(panel => panel.classList.remove('active'));
                 button.classList.add('active');
-                const targetId = button.dataset.tab;
-                const targetPanel = document.getElementById(targetId);
-                targetPanel.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
             });
         });
 
-        // --- ВИДЕО МОДАЛКА ---
-        const videoCards = document.querySelectorAll('.video-card');
+        // === 4. ВИДЕО-СЛАЙДЕР СО СЧЕТЧИКОМ ===
+        const videoSlides = [
+            { preview: 'https://placehold.co/800x450/333/FFF?text=' + encodeURIComponent('Ремонт кухни'), videoSrc: 'https://www.pexels.com/download/video/19227878/', title: 'Ремонт кухни' },
+            { preview: 'https://placehold.co/800x450/333/FFF?text=' + encodeURIComponent('Ремонт ванной'), videoSrc: 'https://www.pexels.com/download/video/29455653/', title: 'Ремонт ванной' },
+            { preview: 'https://placehold.co/800x450/333/FFF?text=' + encodeURIComponent('Ремонт гостиной'), videoSrc: 'https://www.pexels.com/download/video/3127063/', title: 'Ремонт гостиной' },
+            { preview: 'https://placehold.co/800x450/333/FFF?text=' + encodeURIComponent('Ремонт спальни'), videoSrc: 'https://www.pexels.com/download/video/33946643/', title: 'Ремонт спальни' },
+            { preview: 'https://placehold.co/800x450/333/FFF?text=' + encodeURIComponent('Ремонт прихожей'), videoSrc: 'https://www.pexels.com/download/video/7578548/', title: 'Ремонт прихожей' },
+            { preview: 'https://placehold.co/800x450/333/FFF?text=' + encodeURIComponent('Ремонт детской'), videoSrc: 'https://www.pexels.com/download/video/3127063/', title: 'Ремонт детской' }
+        ];
+
+        let currentVideoIndex = 0;
+        const activeVideoCard = document.getElementById('activeVideoCard');
+        const videoImage = activeVideoCard.querySelector('.video-slider__image');
+        const videoCaption = document.querySelector('.video-slider__caption');
+        const videoCounter = document.getElementById('videoCounter');
+
+        // Генерируем цифры-счетчик динамически
+        videoSlides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('video-counter__item');
+            if (index === 0) dot.classList.add('active');
+            dot.textContent = index + 1;
+            dot.addEventListener('click', () => {
+                currentVideoIndex = index;
+                updateVideoSlider(currentVideoIndex);
+            });
+            videoCounter.appendChild(dot);
+        });
+
+        function updateVideoSlider(index) {
+            const slide = videoSlides[index];
+            videoImage.src = slide.preview;
+            activeVideoCard.dataset.video = slide.videoSrc;
+            videoCaption.textContent = slide.title;
+            
+            // Обновляем подсветку цифр
+            const dots = document.querySelectorAll('.video-counter__item');
+            dots.forEach(d => d.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        updateVideoSlider(currentVideoIndex);
+
+        document.querySelector('.video-slider__btn--prev').addEventListener('click', () => {
+            currentVideoIndex = (currentVideoIndex - 1 + videoSlides.length) % videoSlides.length;
+            updateVideoSlider(currentVideoIndex);
+        });
+
+        document.querySelector('.video-slider__btn--next').addEventListener('click', () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videoSlides.length;
+            updateVideoSlider(currentVideoIndex);
+        });
+
+        // Клик по карточке открывает модалку
+        activeVideoCard.addEventListener('click', () => {
+            openModal(activeVideoCard.dataset.video);
+        });
+
+        // === 5. МОДАЛЬНОЕ ОКНО ===
         const modal = document.getElementById('videoModal');
         const modalOverlay = modal.querySelector('.modal__overlay');
         const modalClose = modal.querySelector('.modal__close');
@@ -294,28 +328,13 @@
             document.body.style.overflow = '';
         }
 
-        videoCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const videoSrc = card.dataset.video;
-                openModal(videoSrc);
-            });
-        });
-
         modalClose.addEventListener('click', closeModal);
-
         modalOverlay.addEventListener('click', (event) => {
-            if (event.target === modalOverlay) {
-                closeModal();
-            }
+            if (event.target === modalOverlay) closeModal();
         });
-
         document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
+            if (event.key === 'Escape' && modal.classList.contains('active')) closeModal();
         });
-
     </script>
-
 </body>
 </html>
