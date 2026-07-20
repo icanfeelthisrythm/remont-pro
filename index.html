@@ -328,6 +328,21 @@
             document.body.style.overflow = '';
         }
 
+        // === СХЕМА: тап по маркеру на мобильных ===
+        document.querySelectorAll('.scheme__marker').forEach(marker => {
+        marker.addEventListener('click', (e) => {
+            e.stopPropagation(); // чтобы клик не улетел дальше и не закрыл тултип сразу же
+            const wasActive = marker.classList.contains('active');
+            document.querySelectorAll('.scheme__marker.active').forEach(m => m.classList.remove('active'));
+            if (!wasActive) marker.classList.add('active');
+        });
+        });
+
+        // Тап в любое другое место страницы — закрывает открытый тултип
+        document.addEventListener('click', () => {
+        document.querySelectorAll('.scheme__marker.active').forEach(m => m.classList.remove('active'));
+        });
+
         modalClose.addEventListener('click', closeModal);
         modalOverlay.addEventListener('click', (event) => {
             if (event.target === modalOverlay) closeModal();

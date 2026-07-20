@@ -370,8 +370,9 @@ body {
 
 .scheme__marker {
     position: absolute;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
+    z-index: 2;
     background-color: #0066cc;
     color: #ffffff;
     border-radius: 50%;
@@ -384,6 +385,19 @@ body {
     cursor: pointer;
     transform: translate(-50%, -50%);
     transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.scheme__marker span {
+  /* сам видимый кружок остаётся прежнего размера внутри увеличенной зоны */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #0066cc;
+  color: #fff;
+  border-radius: 50%;
+  margin: 6px; /* центрирует 32px кружок внутри 44px зоны */
 }
 
 .scheme__marker:hover {
@@ -407,8 +421,13 @@ body {
     pointer-events: none;
 }
 
-.scheme__marker:hover .scheme__tooltip {
-    opacity: 1;
+.scheme__marker:hover .scheme__tooltip,
+.scheme__marker.active .scheme__tooltip {
+  opacity: 1;
+}
+
+.scheme__image {
+  -webkit-touch-callout: none; /* убирает системное меню "сохранить фото" на iOS при долгом тапе рядом с маркером */
 }
 
 /* === ВИДЕО-СЛАЙДЕР === */
