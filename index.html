@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>РемонтПро</title>
+    <title>РемонтПро - Качественный ремонт квартир в Москве</title>
+    <meta name="description" content="Профессиональный ремонт квартир в Москве. Гарантия 3 года, фиксированная цена, точные сроки. Бесплатный замер!">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/imask"></script>
 </head>
@@ -11,9 +17,11 @@
     <header class="header">
         <div class="logo">РемонтПро</div>
         <nav class="nav">
-            <a href="#">Главная</a>
-            <a href="#">Цены</a>
-            <a href="#">Контакты</a>
+            <a href="#hero">Главная</a>
+            <a href="#categories">Услуги</a>
+            <a href="#video-section">Видео</a>
+            <a href="#order-form">Цены</a>
+            <a href="#" class="btn-callback">Заказать звонок</a>
         </nav>
         <a class="phone" href="tel:+79990000000">+7 (999) 000-00-00</a>
     </header>
@@ -24,26 +32,26 @@
                 <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
                 <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
                 <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
             </div>
             <div class="marquee__group" aria-hidden="true">
                 <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
                 <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
-                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ 🔥</span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
+                <span>🔥 СКИДКИ ТОЛЬКО 2 ДНЯ </span>
             </div>
         </div>
     </div>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <h1 class="hero__title">Качественный ремонт квартир в Москве</h1>
         <p class="hero__subtitle">Бригада профессионалов с опытом 10+ лет</p>
 
@@ -74,19 +82,19 @@
         <button class="btn" type="button">Заказать</button>
     </section>
 
-    <section class="categories">
+    <section class="categories" id="categories">
         <h2 class="categories__title">Категории услуг</h2>
         <div class="categories__track">
-            <div class="category-card">🍳 Кухни</div>
-            <div class="category-card">🛁 Ванные</div>
-            <div class="category-card">🛋️ Гостиные</div>
-            <div class="category-card">🛏️ Спальни</div>
-            <div class="category-card">🚪 Прихожие</div>
-            <div class="category-card">👶 Детские</div>
+            <div class="category-card" data-video-index="0">🍳 Кухни</div>
+            <div class="category-card" data-video-index="1">🛁 Ванные</div>
+            <div class="category-card" data-video-index="2">🛋️ Гостиные</div>
+            <div class="category-card" data-video-index="3">🛏️ Спальни</div>
+            <div class="category-card" data-video-index="4">🚪 Прихожие</div>
+            <div class="category-card" data-video-index="5">👶 Детские</div>
         </div>
     </section>
 
-    <section class="gallery">
+    <section class="gallery" id="gallery">
         <h2 class="gallery__title">Галерея работ</h2>
         <div class="gallery__slider">
             <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Предыдущая">‹</button>
@@ -98,7 +106,7 @@
         </div>
     </section>
 
-    <section class="tabs">
+    <section class="tabs" id="tabs">
         <h2 class="tabs__title">Комплектация</h2>
         <div class="tabs__buttons">
             <button class="tab-btn active" data-tab="standard">Стандарт</button>
@@ -133,7 +141,7 @@
         </div>
     </section>
 
-    <section class="scheme">
+    <section class="scheme" id="scheme">
         <h2 class="scheme__header">Схема ремонта</h2>
         <div class="scheme__wrapper">
             <img class="scheme__image" src="https://placehold.co/800x400/e0e0e0/333?text=План+квартиры" alt="План квартиры">
@@ -153,7 +161,7 @@
         </div>
     </section>
 
-    <section class="video-section">
+    <section class="video-section" id="video-section">
         <h2 class="video-section__title">Видео о наших работах</h2>
         <div class="video-slider">
             <button class="video-slider__btn video-slider__btn--prev" type="button" aria-label="Предыдущее">‹</button>
@@ -164,8 +172,6 @@
                     <div class="video-card__play">▶</div>
                 </div>
                 <div class="video-slider__caption"></div>
-                
-                <!-- СЧЕТЧИК ВИДЕО (ЦИФРЫ) -->
                 <div class="video-counter" id="videoCounter"></div>
             </div>
 
@@ -173,7 +179,6 @@
         </div>
     </section>
 
-    <!-- Модальное окно для видео -->
     <div class="modal" id="videoModal">
         <div class="modal__overlay">
             <div class="modal__content">
@@ -183,24 +188,31 @@
         </div>
     </div>
 
-    <section class="order-form">
-        <h2 class="order-form__title">Расчитать стоимость ремонта</h2>
-        <div class="order-formcontent">
-            <input type="number" placeholder="М²">
+    <section class="order-form" id="order-form">
+        <h2 class="order-form__title">Рассчитать стоимость ремонта</h2>
+        <div class="order-form__content">
+            <input type="number" placeholder="М²" min="0" max="10000" id="area">
+            <span class="error-message" id="areaError"></span>
+
             <input type="tel" placeholder="Телефон" id="phone">
-            <input type="text" placeholder="ФИО">
-                <label class="order-form__checkbox">
-                    <input type="checkbox" id="design" data-price="50000">
-                    <span>Дизайн-проект (+50 000 ₽)</span>
-                </label>
-                <label class="order-form__checkbox">
-                    <input type="checkbox" id="replan" data-price="30000">
-                    <span>Перепланировка (+30 000 ₽)</span>
-                </label>
-                <label class="order-form__checkbox">
-                    <input type="checkbox" id="order-material" data-price="20000">
-                    <span>Закупка материалов (+20 000 ₽)</span>
-                </label>
+            <span class="error-message" id="phoneError"></span>
+
+            <input type="text" placeholder="ФИО" id="name">
+            <span class="error-message" id="nameError"></span>
+            
+            <label class="order-form__checkbox">
+                <input type="checkbox" id="design" data-price="50000">
+                <span>Дизайн-проект (+50 000 ₽)</span>
+            </label>
+            <label class="order-form__checkbox">
+                <input type="checkbox" id="replan" data-price="30000">
+                <span>Перепланировка (+30 000 ₽)</span>
+            </label>
+            <label class="order-form__checkbox">
+                <input type="checkbox" id="order-material" data-price="20000">
+                <span>Закупка материалов (+20 000 ₽)</span>
+            </label>
+            
             <div class="order-form__total">Итого: <span id="total">0</span> ₽</div>
             <button class="btn-order" type="button">Оформить заявку</button>
         </div>
@@ -217,8 +229,27 @@
         </div>
     </div>
 
+    <div class="modal-callback" id="callbackModal">
+        <div class="modal-callback__overlay">
+            <div class="modal-callback__content">
+                <button class="modal-callback__close" aria-label="Закрыть">×</button>
+                <h3>Заказать обратный звонок</h3>
+                <p>Мы свяжемся с вами в течение 10 минут и проконсультируем по любым вопросам</p>
+                
+                <form class="callback-form" id="callbackForm">
+                    <input type="text" placeholder="Имя" id="callbackName">
+                    <span class="error-message" id="callbackNameError"></span>
+                    
+                    <input type="tel" placeholder="Номер телефона" id="callbackPhone">
+                    <span class="error-message" id="callbackPhoneError"></span>
+                    
+                    <button type="submit" class="btn-callback-submit">Заказать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // === 1. ШАПКА ПРИ СКРОЛЛЕ ===
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
             if (window.scrollY > 100) {
@@ -228,7 +259,6 @@
             }
         });
 
-        // === 2. ГАЛЕРЕЯ ===
         const galleryImages = [
             { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Кухни'), alt: '🍳 Кухни', title: 'Кухни' },
             { src: 'https://placehold.co/600x400/0066cc/FFF?text=' + encodeURIComponent('Ванные'), alt: '🛁 Ванные', title: 'Ванные' },
@@ -239,6 +269,7 @@
         ];
 
         let currentIndex = 0;
+
         function showSlide(index) {
             const img = document.querySelector('.gallery__image');
             img.src = galleryImages[index].src;
@@ -256,7 +287,6 @@
             showSlide(currentIndex);
         });
 
-        // Свайп для галереи
         const slider = document.querySelector('.gallery__slider');
         let touchStartX = 0, touchEndX = 0;
         slider.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
@@ -272,7 +302,6 @@
             }
         }, { passive: true });
 
-        // === 3. ТАБЫ ===
         const tabButtons = document.querySelectorAll('.tab-btn');
         const tabPanels = document.querySelectorAll('.tab-panel');
         tabButtons.forEach(button => {
@@ -284,7 +313,22 @@
             });
         });
 
-        // === 4. ВИДЕО-СЛАЙДЕР СО СЧЕТЧИКОМ ===
+        // Клики по категориям → переключение видео
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const videoIndex = parseInt(card.dataset.videoIndex);
+                if (videoIndex >= 0 && videoIndex < videoSlides.length) {
+                    currentVideoIndex = videoIndex;
+                    updateVideoSlider(currentVideoIndex);
+                    document.querySelector('.video-section').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+            card.style.cursor = 'pointer';
+        });
+
         const videoSlides = [
             { preview: 'https://placehold.co/800x450/333/FFF?text=' + encodeURIComponent('Ремонт кухни'), videoSrc: 'https://assets.mixkit.co/videos/43033/43033-360.mp4', title: 'Ремонт кухни' },
             { preview: 'https://placehold.co/800x450/333/FFF?text=' + encodeURIComponent('Ремонт ванной'), videoSrc: 'https://assets.mixkit.co/videos/42913/42913-720.mp4', title: 'Ремонт ванной' },
@@ -300,7 +344,6 @@
         const videoCaption = document.querySelector('.video-slider__caption');
         const videoCounter = document.getElementById('videoCounter');
 
-        // Генерируем цифры-счетчик динамически
         videoSlides.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('video-counter__item');
@@ -318,13 +361,10 @@
             videoImage.src = slide.preview;
             activeVideoCard.dataset.video = slide.videoSrc;
             videoCaption.textContent = slide.title;
-            
-            // Обновляем подсветку цифр
             const dots = document.querySelectorAll('.video-counter__item');
             dots.forEach(d => d.classList.remove('active'));
             dots[index].classList.add('active');
         }
-
         updateVideoSlider(currentVideoIndex);
 
         document.querySelector('.video-slider__btn--prev').addEventListener('click', () => {
@@ -337,12 +377,10 @@
             updateVideoSlider(currentVideoIndex);
         });
 
-        // Клик по карточке открывает модалку
         activeVideoCard.addEventListener('click', () => {
             openModal(activeVideoCard.dataset.video);
         });
 
-        // === 5. МОДАЛЬНОЕ ОКНО ===
         const modal = document.getElementById('videoModal');
         const modalOverlay = modal.querySelector('.modal__overlay');
         const modalClose = modal.querySelector('.modal__close');
@@ -363,36 +401,6 @@
             document.body.style.overflow = '';
         }
 
-        function calcTotal() {
-            const areaInput = document.querySelector('input[type="number"]')
-            const area = parseInt(areaInput.value) || 0
-            const baseTotal = area * 6900
-            let addonsTotal = 0;
-            const checkboxes = document.querySelectorAll('.order-form__checkbox input[type="checkbox"]')
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    addonsTotal += parseInt(checkbox.dataset.price);
-                }
-            });
-            const total = baseTotal + addonsTotal;
-            document.getElementById('total').textContent = total.toLocaleString('ru-RU');
-        }
-
-        // === СХЕМА: тап по маркеру на мобильных ===
-        document.querySelectorAll('.scheme__marker').forEach(marker => {
-        marker.addEventListener('click', (e) => {
-            e.stopPropagation(); // чтобы клик не улетел дальше и не закрыл тултип сразу же
-            const wasActive = marker.classList.contains('active');
-            document.querySelectorAll('.scheme__marker.active').forEach(m => m.classList.remove('active'));
-            if (!wasActive) marker.classList.add('active');
-        });
-        });
-
-        // Тап в любое другое место страницы — закрывает открытый тултип
-        document.addEventListener('click', () => {
-        document.querySelectorAll('.scheme__marker.active').forEach(m => m.classList.remove('active'));
-        });
-
         modalClose.addEventListener('click', closeModal);
         modalOverlay.addEventListener('click', (event) => {
             if (event.target === modalOverlay) closeModal();
@@ -401,7 +409,32 @@
             if (event.key === 'Escape' && modal.classList.contains('active')) closeModal();
         });
 
-        calcTotal()
+        function showError(inputId, errorId, message) {
+            document.getElementById(inputId).classList.add('error');
+            document.getElementById(errorId).textContent = message;
+        }
+
+        function clearError(inputId, errorId) {
+            document.getElementById(inputId).classList.remove('error');
+            document.getElementById(errorId).textContent = '';
+        }
+
+        function calcTotal() {
+            const areaInput = document.querySelector('input[type="number"]');
+            const area = parseFloat(areaInput.value) || 0;
+            const safeArea = Math.max(0, area);
+            const baseTotal = safeArea * 6900;
+            let addonsTotal = 0;
+            const checkboxes = document.querySelectorAll('.order-form__checkbox input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    addonsTotal += parseInt(checkbox.dataset.price);
+                }
+            });
+            const total = baseTotal + addonsTotal;
+            document.getElementById('total').textContent = total.toLocaleString('ru-RU');
+        }
+        calcTotal();
 
         const areaInput = document.querySelector('input[type="number"]');
         areaInput.addEventListener('input', calcTotal);
@@ -412,77 +445,200 @@
         });
 
         IMask(document.getElementById('phone'), { mask: '+{7} (000) 000-00-00' });
-       
-        function sendForm() {
-        const area = document.querySelector('input[type="number"]').value;
-        const phone = document.getElementById('phone').value;
-        const name = document.querySelector('input[type="text"]').value;
 
-        if (!area || !phone || !name) {
-            alert('Пожалуйста, заполните все поля');
-            return;
+        document.getElementById('area').addEventListener('input', () => clearError('area', 'areaError'));
+        document.getElementById('phone').addEventListener('input', () => clearError('phone', 'phoneError'));
+        document.getElementById('name').addEventListener('input', () => clearError('name', 'nameError'));
+
+        function sendForm() {
+            clearError('area', 'areaError');
+            clearError('phone', 'phoneError');
+            clearError('name', 'nameError');
+
+            const area = parseFloat(document.getElementById('area').value) || 0;
+            const phone = document.getElementById('phone').value;
+            const name = document.getElementById('name').value;
+
+            let hasError = false;
+
+            if (area <= 0) {
+                showError('area', 'areaError', 'Укажите площадь больше 0 м²');
+                hasError = true;
+            }
+
+            if (!phone || phone.length < 18) {
+                showError('phone', 'phoneError', 'Введите номер полностью');
+                hasError = true;
+            }
+
+            if (!name || name.length < 2) {
+                showError('name', 'nameError', 'Введите ваше имя');
+                hasError = true;
+            }
+
+            if (hasError) return;
+
+            const formData = {
+                area: area + ' м²',
+                phone: phone,
+                name: name,
+                total: document.getElementById('total').textContent + ' ₽'
+            };
+
+            const formEndpoint = 'https://formspree.io/f/xojgljjz';
+
+            fetch(formEndpoint, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    openOrderModal();
+                    document.querySelector('input[type="number"]').value = '';
+                    document.getElementById('phone').value = '';
+                    document.querySelector('input[type="text"]').value = '';
+                    document.querySelectorAll('.order-form__checkbox input').forEach(cb => cb.checked = false);
+                    calcTotal();
+                } else {
+                    alert('Ошибка отправки');
+                }
+            })
+            .catch(error => alert('Ошибка сети'));
         }
 
-        // Собираем данные в простой объект
-        const formData = {
-            area: area + ' м²',
-            phone: phone,
-            name: name,
-            total: document.getElementById('total').textContent + ' ₽'
-        };
+        const orderModal = document.getElementById('orderModal');
+        const orderModalClose = orderModal.querySelector('.modal-order__close');
+        const orderModalBtn = orderModal.querySelector('.modal-order__btn');
+        const orderModalOverlay = orderModal.querySelector('.modal-order__overlay');
 
-        // ЗАМЕНИ ЭТУ ССЫЛКУ НА СВОЮ ИЗ FORMSPREE
-        const formEndpoint = 'https://formspree.io/f/xojgljjz';
+        function openOrderModal() {
+            orderModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-        fetch(formEndpoint, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'   // без этого Formspree не понимает, что это AJAX-запрос
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => {
-            if (response.ok) {
-                openOrderModal();
-                // Очистка формы...
-                document.querySelector('input[type="number"]').value = '';
-                document.getElementById('phone').value = '';
-                document.querySelector('input[type="text"]').value = '';
-                document.querySelectorAll('.order-form__checkbox input').forEach(cb => cb.checked = false);
-                calcTotal();
-            } else {
-                alert('Ошибка отправки');
+        function closeOrderModal() {
+            orderModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        orderModalClose.addEventListener('click', closeOrderModal);
+        orderModalBtn.addEventListener('click', closeOrderModal);
+        orderModalOverlay.addEventListener('click', (e) => {
+            if (e.target === orderModalOverlay) closeOrderModal();
+        });
+
+        document.querySelector('.btn-order').addEventListener('click', sendForm);
+
+        document.querySelectorAll('.scheme__marker').forEach(marker => {
+            marker.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const wasActive = marker.classList.contains('active');
+                document.querySelectorAll('.scheme__marker.active').forEach(m => m.classList.remove('active'));
+                if (!wasActive) marker.classList.add('active');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.scheme__marker.active').forEach(m => m.classList.remove('active'));
+        });
+
+        // Модальное окно обратного звонка
+        const callbackModal = document.getElementById('callbackModal');
+        const callbackModalClose = callbackModal.querySelector('.modal-callback__close');
+        const callbackModalOverlay = callbackModal.querySelector('.modal-callback__overlay');
+        const callbackForm = document.getElementById('callbackForm');
+        const callbackNameInput = document.getElementById('callbackName');
+        const callbackPhoneInput = document.getElementById('callbackPhone');
+
+        function openCallbackModal() {
+            callbackModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            callbackNameInput.focus();
+        }
+
+        function closeCallbackModal() {
+            callbackModal.classList.remove('active');
+            document.body.style.overflow = '';
+            clearError('callbackName', 'callbackNameError');
+            clearError('callbackPhone', 'callbackPhoneError');
+            callbackForm.reset();
+        }
+
+        document.querySelector('.btn-callback').addEventListener('click', (e) => {
+            e.preventDefault();
+            openCallbackModal();
+        });
+
+        callbackModalClose.addEventListener('click', closeCallbackModal);
+        callbackModalOverlay.addEventListener('click', (e) => {
+            if (e.target === callbackModalOverlay) closeCallbackModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && callbackModal.classList.contains('active')) {
+                closeCallbackModal();
             }
-        })
-        .catch(error => alert('Ошибка сети'));
-    }
+        });
 
-    // 3. Логика модального окна успеха
-    const orderModal = document.getElementById('orderModal');
-    const orderModalClose = orderModal.querySelector('.modal-order__close');
-    const orderModalBtn = orderModal.querySelector('.modal-order__btn');
-    const orderModalOverlay = orderModal.querySelector('.modal-order__overlay');
+        callbackNameInput.addEventListener('input', () => clearError('callbackName', 'callbackNameError'));
+        callbackPhoneInput.addEventListener('input', () => clearError('callbackPhone', 'callbackPhoneError'));
 
-    function openOrderModal() {
-        orderModal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Блокируем скролл
-    }
-
-    function closeOrderModal() {
-        orderModal.classList.remove('active');
-        document.body.style.overflow = ''; // Возвращаем скролл
-    }
-
-    orderModalClose.addEventListener('click', closeOrderModal);
-    orderModalBtn.addEventListener('click', closeOrderModal);
-    orderModalOverlay.addEventListener('click', (e) => {
-        if (e.target === orderModalOverlay) closeOrderModal();
-    });
-
-    // 4. Вешаем отправку на кнопку "Оформить заявку"
-    document.querySelector('.btn-order').addEventListener('click', sendForm);
-
+        callbackForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            clearError('callbackName', 'callbackNameError');
+            clearError('callbackPhone', 'callbackPhoneError');
+            
+            const name = callbackNameInput.value.trim();
+            const phone = callbackPhoneInput.value.trim();
+            
+            let hasError = false;
+            
+            if (!name || name.length < 2) {
+                showError('callbackName', 'callbackNameError', 'Введите ваше имя');
+                hasError = true;
+            }
+            
+            if (!phone || phone.length < 18) {
+                showError('callbackPhone', 'callbackPhoneError', 'Введите номер полностью');
+                hasError = true;
+            }
+            
+            if (hasError) return;
+            
+            const formData = {
+                name: name,
+                phone: phone,
+                subject: 'Запрос обратного звонка'
+            };
+            
+            const formEndpoint = 'https://formspree.io/f/xojgljjz';
+            
+            fetch(formEndpoint, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Спасибо! Мы перезвоним вам в ближайшее время.');
+                    closeCallbackModal();
+                } else {
+                    alert('Ошибка отправки. Попробуйте позже.');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка сети. Проверьте подключение.');
+            });
+        });
     </script>
 </body>
 </html>
