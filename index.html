@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>РемонтПро</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/imask"></script>
 </head>
 <body>
     <header class="header">
@@ -182,6 +183,40 @@
         </div>
     </div>
 
+    <section class="order-form">
+        <h2 class="order-form__title">Расчитать стоимость ремонта</h2>
+        <div class="order-formcontent">
+            <input type="number" placeholder="М²">
+            <input type="tel" placeholder="Телефон" id="phone">
+            <input type="text" placeholder="ФИО">
+                <label class="order-form__checkbox">
+                    <input type="checkbox" id="design" data-price="50000">
+                    <span>Дизайн-проект (+50 000 ₽)</span>
+                </label>
+                <label class="order-form__checkbox">
+                    <input type="checkbox" id="replan" data-price="30000">
+                    <span>Перепланировка (+30 000 ₽)</span>
+                </label>
+                <label class="order-form__checkbox">
+                    <input type="checkbox" id="order-material" data-price="20000">
+                    <span>Закупка материалов (+20 000 ₽)</span>
+                </label>
+            <div class="order-form__total">Итого: <span id="total">0</span> ₽</div>
+            <button class="btn-order" type="button">Оформить заявку</button>
+        </div>
+    </section>
+
+    <div class="modal-order" id="orderModal">
+        <div class="modal-order__overlay">
+            <div class="modal-order__content">
+                <button class="modal-order__close" aria-label="Закрыть">×</button>
+                <h3>Заявка отправлена!</h3>
+                <p>Мы перезвоним вам в течение 15 минут</p>
+                <button class="modal-order__btn">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // === 1. ШАПКА ПРИ СКРОЛЛЕ ===
         window.addEventListener('scroll', () => {
@@ -328,6 +363,21 @@
             document.body.style.overflow = '';
         }
 
+        function calcTotal() {
+            const areaInput = document.querySelector('input[type="number"]')
+            const area = parseInt(areaInput.value) || 0
+            const baseTotal = area * 6900
+            let addonsTotal = 0;
+            const checkboxes = document.querySelectorAll('.order-form__checkbox input[type="checkbox"]')
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    addonsTotal += parseInt(checkbox.dataset.price);
+                }
+            });
+            const total = baseTotal + addonsTotal;
+            document.getElementById('total').textContent = total.toLocaleString('ru-RU');
+        }
+
         // === СХЕМА: тап по маркеру на мобильных ===
         document.querySelectorAll('.scheme__marker').forEach(marker => {
         marker.addEventListener('click', (e) => {
@@ -350,6 +400,86 @@
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && modal.classList.contains('active')) closeModal();
         });
+
+        calcTotal()
+
+        const areaInput = document.querySelector('input[type="number"]');
+        areaInput.addEventListener('input', calcTotal);
+
+        const checkboxes = document.querySelectorAll('.order-form__checkbox input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', calcTotal);
+        });
+
+        IMask(document.getElementById('phone'), { mask: '+{7} (000) 000-00-00' });
+       
+        function sendForm() {
+        const area = document.querySelector('input[type="number"]').value;
+        const phone = document.getElementById('phone').value;
+        const name = document.querySelector('input[type="text"]').value;
+
+        if (!area || !phone || !name) {
+            alert('Пожалуйста, заполните все поля');
+            return;
+        }
+
+        // Собираем данные в простой объект
+        const formData = {
+            area: area + ' м²',
+            phone: phone,
+            name: name,
+            total: document.getElementById('total').textContent + ' ₽'
+        };
+
+        // ЗАМЕНИ ЭТУ ССЫЛКУ НА СВОЮ ИЗ FORMSPREE
+        const formEndpoint = 'https://formspree.io/f/xojgljjz';
+
+        fetch(formEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (response.ok) {
+                openOrderModal();
+                // Очистка формы...
+                document.querySelector('input[type="number"]').value = '';
+                document.getElementById('phone').value = '';
+                document.querySelector('input[type="text"]').value = '';
+                document.querySelectorAll('.order-form__checkbox input').forEach(cb => cb.checked = false);
+                calcTotal();
+            } else {
+                alert('Ошибка отправки');
+            }
+        })
+        .catch(error => alert('Ошибка сети'));
+    }
+
+    // 3. Логика модального окна успеха
+    const orderModal = document.getElementById('orderModal');
+    const orderModalClose = orderModal.querySelector('.modal-order__close');
+    const orderModalBtn = orderModal.querySelector('.modal-order__btn');
+    const orderModalOverlay = orderModal.querySelector('.modal-order__overlay');
+
+    function openOrderModal() {
+        orderModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Блокируем скролл
+    }
+
+    function closeOrderModal() {
+        orderModal.classList.remove('active');
+        document.body.style.overflow = ''; // Возвращаем скролл
+    }
+
+    orderModalClose.addEventListener('click', closeOrderModal);
+    orderModalBtn.addEventListener('click', closeOrderModal);
+    orderModalOverlay.addEventListener('click', (e) => {
+        if (e.target === orderModalOverlay) closeOrderModal();
+    });
+
+    // 4. Вешаем отправку на кнопку "Оформить заявку"
+    document.querySelector('.btn-order').addEventListener('click', sendForm);
+
     </script>
 </body>
 </html>
