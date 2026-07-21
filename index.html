@@ -436,7 +436,10 @@
 
         fetch(formEndpoint, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'   // без этого Formspree не понимает, что это AJAX-запрос
+            },
             body: JSON.stringify(formData)
         })
         .then(response => {
